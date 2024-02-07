@@ -6,6 +6,45 @@ body {
     align-items: center;
     background-image: linear-gradient(to right,  #2D4057, #2196F3);
     justify-content: center;
+    padding-bottom: 100px;
+  }
+  .progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #f0f0f0;
+    z-index: 1000;
+    overflow: hidden;
+  }
+
+  .progress {
+    height: 100%;
+    background-color: red;
+    animation: scaleProgress 1s linear, colorChange 0.001s linear infinite alternate;
+    animation-timeline: scroll(root);
+  }
+
+  @keyframes scaleProgress {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes colorChange {
+    0% {
+      background-color: red;
+    }
+    50% {
+      background-color: yellow;
+    }
+    100% {
+      background-color: rgb(11, 169, 197);
+    }
   }
   
   header {
@@ -18,6 +57,40 @@ body {
     font-family: 'Times New Roman', Times, serif;
     filter: brightness(70%) saturate(170%);
   }
+  .hire-me-button {
+    background-color: #2D4057;
+    color: #dad5d5;
+    border:0cm;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  .hire-me-button:hover {
+    background-color: #f0c63d;
+    color:#2D4057;
+  }
+  .menu-button{
+    background-color: #cfd0d1;
+    color: #2D4057 ;
+    border:0cm;
+    padding: 10px 20px ;
+    font-size: 16px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+ 
+    top: 40px;
+  right: 900px;
+  background: linear-gradient(to right, #e6f1e3, #d3e974);
+  padding: 10px;
+ 
+  }
+  
+  .menu-button:hover {
+    background-color: #FA9483;
+  }
   p{
     color:#333;
     font-size: larger;
@@ -29,6 +102,7 @@ body {
     width: 200px;
     height: 200px; 
     border-radius: 50%;
+
     overflow: hidden;
     border: 30px solid #4097aa;
     justify-content: center;
@@ -48,7 +122,7 @@ body {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #FA9483;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
@@ -57,47 +131,93 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    
   }
   
-  .profile img {
+  .profile-picture img {
     max-width: 100%;
     height: auto;
     border-radius: 50%;
+    transition: all 1s ease-in;
+  }
+  .profile-picture img:hover{
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: #4097aa;
+  }
+  #mySidenav {
+    position: absolute;
+    top: 86.5%;
+    transform: translateY(-50%);
+    transition: 0.3s;
   }
   
-  .skills {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
+  #mySidenav a {
+    position: absolute;
+    left: -100px;
+    transition: 0.3s;
+    padding: 25px;
+    width: 100px;
+    text-decoration: none;
+    font-size: 12px;
+    color: white;
+    text-align: left;
+    border-radius:0 15px 5px 0;
  
-    #customers {
-        font-family: Arial, Helvetica, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-       }
-       #customers td, #customers th {
-        border: 1px solid #ddd;
-        padding: 8px;
-       }
-       #customers tr:nth-child(even){background-color: #fa9483;}
-       
-       #customers tr:hover {background-color: #F3DECA;}
-       #customers th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        
-        color:black;
-       }
+  }
+  
+  #mySidenav a:hover {
+    left: 0;
+  }
+  
+  #about {
+    top: 0;
+    background-color: #f5e71c;
+  }
+  
+  #blog {
+    top: 50px;
+    background-color: #6aa0ec;
+  }
+  
+  #projects {
+    top: 110px;
+    background-color:#fc88a5 ;
+  }
+  
+  #contact {
+    top: 180px;
+    background-color:#32fabe;
+  }
+  
+  .social-icons a{
+    text-decoration:none;
+    padding :10px;
+    background-color: #f1d2d2;;
+    margin:10px;
+    border-radius: 50%;
+
+  }
+  .social-icons a:hover{
+    background-color: #2196F3;
+    transition: 0.5s;
+ 
+
+  }
+  .social-icons a i:hover{
+    background-color:#F1B21D;
+    transition: 0.5s;
+ 
+
   }
   
   footer {
     background: #F1B21D;
-    color: #D96465;
-    padding: 5px;
+    color: #e61d20b2;
+    padding: 13px;
     text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
-    length: 5px;
+ 
   }
